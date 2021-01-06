@@ -47,5 +47,40 @@ function toDo() {
         td3.classList = "w-75 text-right pr-2";
         td4.classList = "w-10"
         tbody.appendChild(tr);
+        
+        
+        // delete part codes
+        a_td1.addEventListener("click", del);
+
+        function del() {
+            let delete1 = document.getElementById("setDelete");
+
+
+            let p_deleted = document.createElement('p');
+            p_deleted.style.borderBottom ="gray 2px solid";
+            let text_p_delete = document.createTextNode(td3.textContent);
+
+            p_deleted.appendChild(text_p_delete);
+            delete1.appendChild(p_deleted);
+            document.getElementById("delete").style.display = "block";
+            tbody.removeChild(tr);
+        }
+
+        // Do part codes
+        a_td2.addEventListener("click",doed);
+        function doed(){
+            let doo = document.getElementById("doo");
+            let p_doo = document.createElement("p");
+            p_doo.style.borderBottom ="green 2px solid";
+            p_doo.style.padding ="10px auto";
+            let do_p_doo = document.createTextNode(td3.textContent);
+
+            p_doo.appendChild(do_p_doo);
+            doo.appendChild(p_doo);
+            document.getElementById("doood").style.display = "block";
+
+            tbody.removeChild(tr);
+
+        }
     }
 }
